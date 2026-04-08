@@ -1,0 +1,53 @@
+{
+  "intro": "All trips are private. Season runs May through mid-October.",
+  "trips": [
+    {
+      "name": "AM Half Day",
+      "badge": "Private Trip",
+      "featured": false,
+      "price": "$350",
+      "specs": [
+        "4 hours &middot; Starts 5:30 AM",
+        "Saturdays &amp; Sundays",
+        "May 13 &ndash; Oct 15",
+        "Free cancellation with 1 day notice"
+      ]
+    },
+    {
+      "name": "Half Day &ndash; 1 Tide",
+      "badge": "Most Popular",
+      "featured": true,
+      "price": "$350",
+      "specs": [
+        "4 hours &middot; Starts 5:00 PM",
+        "Any day of the week",
+        "May 10 &ndash; Oct 15",
+        "Free cancellation with 1 day notice"
+      ]
+    },
+    {
+      "name": "Full Day &ndash; 2 Tides",
+      "badge": "Private Trip",
+      "featured": false,
+      "price": "$600",
+      "specs": [
+        "8 hours &middot; Starts 5:30 AM",
+        "Saturdays &amp; Sundays",
+        "May 10 &ndash; Oct 15",
+        "Free cancellation with 1 day notice"
+      ]
+    }
+  ],
+  "included": [
+    "Rods, reels &amp; tackle",
+    "Lures &amp; flies",
+    "Fly fishing equipment",
+    "Fishing license",
+    "Water &amp; snacks",
+    "Ice box onboard",
+    "GPS &amp; fishfinder",
+    "Pickup in Brunswick"
+  ],
+  "included_note": "Catch and release is strongly encouraged. Some species may require special tags. Drew will let you know what to expect before you go.",
+  "what_to_bring": "Sunblock (non-spray), sunglasses, and a water bottle. Feel free to bring food and drinks. Alcohol is fine in moderation &mdash; skip the hard liquor and glass bottles. Dress in layers; mornings on the water are cool even in summer."
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ site.name }} | Fishing Brunswick, Maine</title>
+  <meta name="description" content="Fishing charters on the New Meadows watershed out of Brunswick, Maine. Captain Drew Renda brings 20 years of local knowledge to every trip. Fly fishing, spin casting, striped bass, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header class="site-header" id="top">
+    <nav class="nav-inner">
+      <a href="#top" class="nav-logo">
+        <img src="/{{ site.logo }}" alt="{{ site.name }} logo" class="nav-logo-img" />
+        <span class="nav-logo-text">{{ site.name }}</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#trips">Trips &amp; Rates</a></li>
+        <li><a href="#about">Captain Drew</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact" class="nav-cta">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="hero">
+      <div class="hero-img-wrap">
+        <img src="/{{ hero.image }}" alt="{{ hero.image_alt }}" class="hero-img" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">{{ hero.eyebrow }}</p>
+        <h1 class="hero-headline">{{ hero.headline1 }}<br><em>{{ hero.headline2 }}</em></h1>
+        <p class="hero-sub">{{ hero.subtext }}</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Book a Trip</a>
+          <a href="#trips" class="btn btn-secondary">See Trips &amp; Rates</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHAT TO EXPECT
+    ============================================================ -->
+    <section class="expect" id="expect">
+      <div class="container">
+        <h2 class="section-title">What to Expect</h2>
+        <p class="section-intro">Every trip is private. Just you, your group, and Captain Drew. He knows these waters the way most people know their own backyard.</p>
+        <div class="expect-grid">
+          <div class="expect-item">
+            <div class="expect-icon">&#9875;</div>
+            <h3>Local Knowledge</h3>
+            <p>Drew has fished the New Meadows watershed for 20 years. He knows the drifts, the ledges, and the flats. He puts you on fish.</p>
+          </div>
+          <div class="expect-item">
+            <div class="expect-icon">&#127907;</div>
+            <h3>Fly Fishing &amp; Spin</h3>
+            <p>Fly fishing is a specialty here. Spin casting too. Rods, reels, tackle, lures, and flies are all included. Bring your own gear if you prefer.</p>
+          </div>
+          <div class="expect-item">
+            <div class="expect-icon">&#128101;</div>
+            <h3>Private &amp; Personal</h3>
+            <p>All trips are private charters. Up to 4 passengers. Two anglers recommended when fly fishing. Kids are welcome on board.</p>
+          </div>
+          <div class="expect-item">
+            <div class="expect-icon">&#128205;</div>
+            <h3>Pickup Included</h3>
+            <p>Transfer from hotels or anywhere in Brunswick to the departure site is included in every trip rate. No logistics to figure out.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRIPS & RATES
+    ============================================================ -->
+    <section class="trips" id="trips">
+      <div class="trips-bg">
+        <img src="/images/sunrise.jpeg" alt="Sunrise over the New Meadows watershed" class="trips-bg-img" />
+        <div class="trips-bg-overlay"></div>
+      </div>
+      <div class="container trips-container">
+        <h2 class="section-title light">Trips &amp; Rates</h2>
+        <p class="section-intro light">{{ trips.intro }}</p>
+        <div class="trips-grid">
+          {% for trip in trips.trips %}
+          <div class="trip-card{% if trip.featured %} trip-card-featured{% endif %}">
+            <div class="trip-header">
+              <span class="trip-badge{% if trip.featured %} badge-featured{% endif %}">{{ trip.badge }}</span>
+              <h3 class="trip-name">{{ trip.name }}</h3>
+            </div>
+            <div class="trip-details">
+              <p class="trip-price">{{ trip.price }}</p>
+              <ul class="trip-specs">
+                {% for spec in trip.specs %}
+                <li>{{ spec }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <a href="mailto:{{ site.email }}?subject=Trip%20Inquiry%20-%20Bad%20Cast%20Charters" class="btn btn-primary btn-full">Book This Trip</a>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="included">
+          <h3 class="included-title">Every trip includes</h3>
+          <ul class="included-list">
+            {% for item in trips.included %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          <p class="included-note">{{ trips.included_note }}</p>
+        </div>
+
+        <div class="guest-brings">
+          <h3 class="included-title">What to bring</h3>
+          <p class="guest-brings-text">{{ trips.what_to_bring }}</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SPECIES
+    ============================================================ -->
+    <section class="species" id="species">
+      <div class="container">
+        <h2 class="section-title">What We Target</h2>
+        <p class="section-intro">The New Meadows watershed and surrounding Casco Bay waters hold a strong mix of species through the season.</p>
+        <ul class="species-list">
+          <li><strong>Striped Bass</strong> &mdash; the main event. Drew knows where they run.</li>
+          <li><strong>Bluefish</strong> &mdash; hard fighters, especially on light tackle and the fly.</li>
+          <li><strong>Atlantic Mackerel</strong> &mdash; great on the fly, great for beginners.</li>
+          <li><strong>Pollock</strong> &mdash; a local staple and a strong fighter near structure.</li>
+          <li><strong>Cod &amp; Haddock</strong> &mdash; bottom fishing when conditions are right.</li>
+          <li><strong>Blue Shark</strong> &mdash; licensed and available with advance planning.</li>
+          <li><strong>Tuna</strong> &mdash; licensed and available. Some prep required. Ask Drew.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT CAPTAIN DREW
+    ============================================================ -->
+    <section class="about" id="about">
+      <div class="container about-container">
+        <div class="about-photos">
+          <img src="/{{ about.photo_main }}" alt="{{ about.photo_main_alt }}" class="about-photo-main" />
+          <img src="/{{ about.photo_secondary }}" alt="{{ about.photo_secondary_alt }}" class="about-photo-secondary" />
+        </div>
+        <div class="about-text">
+          <p class="about-eyebrow">{{ about.eyebrow }}</p>
+          <h2 class="about-name">{{ about.name }}</h2>
+          {% for para in about.paragraphs %}
+          <p>{{ para }}</p>
+          {% endfor %}
+          <a href="#contact" class="btn btn-primary">Book a Trip with Drew</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS
+         Future: replace with live review embed
+    ============================================================ -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <h2 class="section-title">What People Are Saying</h2>
+        <div class="testimonials-grid">
+          {% for t in testimonials.testimonials %}
+          <blockquote class="testimonial">
+            <p>"{{ t.quote }}"</p>
+            <cite>{{ t.source }}</cite>
+          </blockquote>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PHOTO GALLERY
+    ============================================================ -->
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <h2 class="section-title">On the Water</h2>
+      </div>
+      <div class="gallery-grid">
+        {% for photo in gallery.photos %}
+        <div class="gallery-item{% if photo.wide %} gallery-item-wide{% endif %}">
+          <img src="/{{ photo.src }}" alt="{{ photo.alt }}" loading="lazy" />
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INSTAGRAM
+         Replace placeholder below with Instagram embed when ready.
+         Embeds only render live, not locally -- this is normal.
+    ============================================================ -->
+    <section class="instagram" id="instagram">
+      <div class="container">
+        <h2 class="section-title">Follow Along</h2>
+        <p class="section-intro">See what's running, where Drew's been, and what the water looks like this week.</p>
+        <div class="instagram-placeholder">
+          <!-- Replace with Instagram embed code when ready -->
+          <a href="{{ site.instagram }}" target="_blank" rel="noopener" class="instagram-link">
+            <span class="instagram-handle">{{ site.instagram_handle }}</span>
+            <span class="instagram-cta">View on Instagram &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EMAIL SIGNUP
+         Replace form below with Kit embed code when Drew has his account.
+         Kit forms only render live, not locally -- this is normal.
+    ============================================================ -->
+    <section class="signup" id="signup">
+      <div class="container">
+        <h2 class="signup-title">Stay in the Loop</h2>
+        <p class="signup-sub">Season updates, trip openings, and the occasional report from the water. No spam.</p>
+        <!-- REPLACE THIS FORM WITH KIT EMBED CODE -->
+        <form class="signup-form" name="email-signup" action="#" method="POST">
+          <input type="email" name="email" placeholder="Your email address" required class="signup-input" />
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT / BOOKING
+    ============================================================ -->
+    <section class="contact" id="contact">
+      <div class="container contact-container">
+        <div class="contact-text">
+          <h2 class="section-title">{{ contact.heading }}</h2>
+          <p>{{ contact.intro }}</p>
+          <div class="contact-actions">
+            <a href="mailto:{{ contact.email }}?subject=Trip%20Inquiry%20-%20Bad%20Cast%20Charters&body=Hi%20Captain%20Drew%2C%0A%0AI%27d%20like%20to%20book%20a%20trip.%0A%0APreferred%20date%3A%0ATrip%20type%20(AM%20half%20day%2C%20half%20day%2C%20full%20day)%3A%0AGroup%20size%3A%0AAnything%20else%3A%0A%0AThanks!" class="btn btn-primary">Email Captain Drew</a>
+          </div>
+          <div class="contact-details">
+            <p><strong>Email:</strong> <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+            <p><strong>Departure:</strong> {{ contact.departure }}</p>
+            <p><strong>Season:</strong> {{ contact.season }}</p>
+          </div>
+        </div>
+        <div class="contact-boat">
+          <img src="/{{ contact.boat_image }}" alt="{{ contact.boat_image_alt }}" class="contact-boat-img" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/{{ site.logo }}" alt="{{ site.name }}" class="footer-logo-img" />
+        <span class="footer-brand-name">{{ site.name }}</span>
+      </div>
+      <div class="footer-links">
+        <a href="#trips">Trips</a>
+        <a href="#about">Captain Drew</a>
+        <a href="#gallery">Gallery</a>
+        <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:{{ site.email }}">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; {{ site.year }} {{ site.name }} &middot; Brunswick, Maine</p>
+      <p class="footer-disclaimer">{{ site.disclaimer }}</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

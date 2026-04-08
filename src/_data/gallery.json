@@ -1,0 +1,34 @@
+{
+  "photos": [
+    {
+      "src": "images/gallery-1.jpeg",
+      "alt": "Donna holding a striped bass at golden hour on the New Meadows",
+      "wide": true
+    },
+    {
+      "src": "images/gallery-2.jpeg",
+      "alt": "Fly fishing for striped bass along the Maine rocky shoreline",
+      "wide": false
+    },
+    {
+      "src": "images/gallery-3.jpeg",
+      "alt": "Angler with a large cod on F/V Bad Cast",
+      "wide": false
+    },
+    {
+      "src": "images/gallery-4.jpeg",
+      "alt": "Happy angler with a bluefish on a sunny day",
+      "wide": false
+    },
+    {
+      "src": "images/gallery-5.jpeg",
+      "alt": "Striped bass caught near the Brunswick Maine harbor",
+      "wide": true
+    },
+    {
+      "src": "images/gallery-6.jpeg",
+      "alt": "Fishing rod over the water, fall foliage on the Maine shore",
+      "wide": false
+    }
+  ]
+}

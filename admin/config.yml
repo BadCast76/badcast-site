@@ -1,0 +1,122 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images"
+public_folder: "/images"
+
+collections:
+
+  - name: "hero"
+    label: "Hero Section"
+    files:
+      - label: "Hero"
+        name: "hero"
+        file: "src/_data/hero.json"
+        fields:
+          - { label: "Eyebrow text", name: "eyebrow", widget: "string" }
+          - { label: "Headline line 1", name: "headline1", widget: "string" }
+          - { label: "Headline line 2 (italic gold)", name: "headline2", widget: "string" }
+          - { label: "Subtext paragraph", name: "subtext", widget: "text" }
+          - { label: "Hero photo", name: "image", widget: "image" }
+          - { label: "Hero photo description", name: "image_alt", widget: "string" }
+
+  - name: "trips"
+    label: "Trips & Rates"
+    files:
+      - label: "Trips & Rates"
+        name: "trips"
+        file: "src/_data/trips.json"
+        fields:
+          - { label: "Section intro", name: "intro", widget: "string" }
+          - label: "Trips"
+            name: "trips"
+            widget: "list"
+            fields:
+              - { label: "Trip name", name: "name", widget: "string" }
+              - { label: "Badge label", name: "badge", widget: "string" }
+              - { label: "Featured (highlighted card)", name: "featured", widget: "boolean", default: false }
+              - { label: "Price", name: "price", widget: "string" }
+              - label: "Trip details"
+                name: "specs"
+                widget: "list"
+                field: { label: "Detail", name: "item", widget: "string" }
+          - label: "What's included"
+            name: "included"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+          - { label: "Included note", name: "included_note", widget: "text" }
+          - { label: "What to bring", name: "what_to_bring", widget: "text" }
+
+  - name: "about"
+    label: "About Captain Drew"
+    files:
+      - label: "About"
+        name: "about"
+        file: "src/_data/about.json"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Captain's name", name: "name", widget: "string" }
+          - { label: "Main photo", name: "photo_main", widget: "image" }
+          - { label: "Main photo description", name: "photo_main_alt", widget: "string" }
+          - { label: "Second photo", name: "photo_secondary", widget: "image" }
+          - { label: "Second photo description", name: "photo_secondary_alt", widget: "string" }
+          - label: "Bio paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "para", widget: "text" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    files:
+      - label: "Testimonials"
+        name: "testimonials"
+        file: "src/_data/testimonials.json"
+        fields:
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Source", name: "source", widget: "string" }
+
+  - name: "gallery"
+    label: "Photo Gallery"
+    files:
+      - label: "Gallery"
+        name: "gallery"
+        file: "src/_data/gallery.json"
+        fields:
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            fields:
+              - { label: "Photo", name: "src", widget: "image" }
+              - { label: "Photo description", name: "alt", widget: "string" }
+              - { label: "Wide photo (spans 2 columns)", name: "wide", widget: "boolean", default: false }
+
+  - name: "contact"
+    label: "Contact & Booking"
+    files:
+      - label: "Contact"
+        name: "contact"
+        file: "src/_data/contact.json"
+        fields:
+          - { label: "Section heading", name: "heading", widget: "string" }
+          - { label: "Intro text", name: "intro", widget: "text" }
+          - { label: "Email address", name: "email", widget: "string" }
+          - { label: "Departure address", name: "departure", widget: "string" }
+          - { label: "Season dates", name: "season", widget: "string" }
+
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - label: "Site Settings"
+        name: "site"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Business name", name: "name", widget: "string" }
+          - { label: "Email address", name: "email", widget: "string" }
+          - { label: "Instagram URL", name: "instagram", widget: "string" }
+          - { label: "Instagram handle", name: "instagram_handle", widget: "string" }
+          - { label: "Footer disclaimer", name: "disclaimer", widget: "text" }
