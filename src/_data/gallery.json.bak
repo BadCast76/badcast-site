@@ -1,0 +1,49 @@
+{
+  "photos": [
+    {
+      "src": "images/gallery-1.jpeg",
+      "alt": "Donna holding a striped bass at golden hour on the New Meadows",
+      "wide": true
+    },
+    {
+      "src": "images/gallery-8.jpeg",
+      "alt": "Captain Drew with a striped bass on the fly rod, Maine rocky coast",
+      "wide": false
+    },
+    {
+      "src": "images/gallery-2.jpeg",
+      "alt": "Fly fishing for striped bass along the Maine rocky shoreline",
+      "wide": false
+    },
+    {
+      "src": "images/gallery-7.jpeg",
+      "alt": "Happy angler with a large striped bass on F/V Bad Cast",
+      "wide": false
+    },
+    {
+      "src": "images/gallery-9.jpeg",
+      "alt": "Angler with a trophy bluefish on a perfect Maine day",
+      "wide": true
+    },
+    {
+      "src": "images/gallery-3.jpeg",
+      "alt": "Angler with a large cod on F/V Bad Cast",
+      "wide": false
+    },
+    {
+      "src": "images/gallery-4.jpeg",
+      "alt": "Happy angler with a bluefish on a sunny day",
+      "wide": false
+    },
+    {
+      "src": "images/gallery-5.jpeg",
+      "alt": "Striped bass caught near the Brunswick Maine harbor",
+      "wide": true
+    },
+    {
+      "src": "images/gallery-10.jpeg",
+      "alt": "Captain Drew in blue shirt holding a fish on F/V Bad Cast",
+      "wide": false
+    }
+  ]
+}

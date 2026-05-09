@@ -708,7 +708,7 @@ ul {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
+  grid-auto-rows: auto;
   gap: 6px;
   margin-top: 1rem;
 }
