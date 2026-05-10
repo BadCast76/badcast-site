@@ -1094,3 +1094,102 @@ ul {
     text-align: center;
   }
 }
+
+
+/* ============================================================
+   WAIVER PAGE
+============================================================ */
+
+.waiver-hero {
+  padding: 6rem 0 3rem;
+  background: var(--color-sand, #f5f0e8);
+  text-align: center;
+}
+
+.waiver-hero-title {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 2.8rem;
+  color: var(--color-navy, #1a2e44);
+  margin-bottom: 1rem;
+}
+
+.waiver-hero-sub {
+  font-size: 1.1rem;
+  color: var(--color-text, #333);
+  max-width: 640px;
+  margin: 0 auto 1rem;
+  line-height: 1.7;
+}
+
+.waiver-contact {
+  font-size: 1rem;
+  color: var(--color-text, #333);
+}
+
+.waiver-contact a {
+  color: var(--color-ocean, #2a7aad);
+  text-decoration: none;
+}
+
+.waivers {
+  padding: 4rem 0;
+}
+
+.waivers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.waiver-card {
+  background: #fff;
+  border: 1px solid #e0ddd8;
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.waiver-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.waiver-card-title {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 1.5rem;
+  color: var(--color-navy, #1a2e44);
+  margin-bottom: 1rem;
+}
+
+.waiver-card-desc {
+  font-size: 1rem;
+  color: var(--color-text, #333);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.waiver-note {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-text, #333);
+  line-height: 1.7;
+  border-top: 1px solid #e0ddd8;
+  padding-top: 2rem;
+}
+
+.waiver-note a {
+  color: var(--color-ocean, #2a7aad);
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .waivers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .waiver-hero-title {
+    font-size: 2rem;
+  }
+}

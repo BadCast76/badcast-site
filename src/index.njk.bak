@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bad Cast Charters | Fishing Brunswick, Maine</title>
+  <title>{{ site.name }} | Fishing Brunswick, Maine</title>
   <meta name="description" content="Fishing charters on the New Meadows watershed out of Brunswick, Maine. Captain Drew Renda brings 20 years of local knowledge to every trip. Fly fishing, spin casting, striped bass, and more." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,8 +18,8 @@
   <header class="site-header" id="top">
     <nav class="nav-inner">
       <a href="#top" class="nav-logo">
-        <img src="/images/logo.jpeg" alt="Bad Cast Charters logo" class="nav-logo-img" />
-        <span class="nav-logo-text">Bad Cast Charters</span>
+        <img src="/{{ site.logo }}" alt="{{ site.name }} logo" class="nav-logo-img" />
+        <span class="nav-logo-text">{{ site.name }}</span>
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -28,7 +28,6 @@
         <li><a href="#trips">Trips &amp; Rates</a></li>
         <li><a href="#about">Captain Drew</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="/waiver/">Waivers</a></li>
         <li><a href="#contact" class="nav-cta">Book Now</a></li>
       </ul>
     </nav>
@@ -41,13 +40,13 @@
     ============================================================ -->
     <section class="hero" id="hero">
       <div class="hero-img-wrap">
-        <img src="/images/hero.jpeg" alt="F/V Bad Cast on the New Meadows watershed at golden hour" class="hero-img" />
+        <img src="/{{ hero.image }}" alt="{{ hero.image_alt }}" class="hero-img" />
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
-        <p class="hero-eyebrow">Brunswick, Maine &amp;middot; New Meadows Watershed</p>
-        <h1 class="hero-headline">Fish the waters<br><em>you won&#39;t forget.</em></h1>
-        <p class="hero-sub">Private charters with Captain Drew Renda. 20 years of local knowledge. Striped bass, bluefish, cod, and more. Fly fishing and spin casting on a 21&#39; Grady-White.</p>
+        <p class="hero-eyebrow">{{ hero.eyebrow }}</p>
+        <h1 class="hero-headline">{{ hero.headline1 }}<br><em>{{ hero.headline2 }}</em></h1>
+        <p class="hero-sub">{{ hero.subtext }}</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Book a Trip</a>
           <a href="#trips" class="btn btn-secondary">See Trips &amp; Rates</a>
@@ -66,7 +65,7 @@
           <div class="expect-item">
             <div class="expect-icon">&#9875;</div>
             <h3>Local Knowledge</h3>
-            <p>Drew has fished the New Meadows watershed for over 20 years. He keeps the hunt moving -- drifting the edges, ledges, and shallows. He knows these waters and loves sharing them.</p>
+            <p>Drew has fished the New Meadows watershed for 20 years. He knows the drifts, the ledges, and the flats. He puts you on fish.</p>
           </div>
           <div class="expect-item">
             <div class="expect-icon">&#127907;</div>
@@ -80,8 +79,8 @@
           </div>
           <div class="expect-item">
             <div class="expect-icon">&#128205;</div>
-            <h3>Easy Meeting Point</h3>
-            <p>Meet Captain Drew at Watsons General Store in Harpswell. He'll send you directions and details when your trip is confirmed.</p>
+            <h3>Pickup Included</h3>
+            <p>Transfer from hotels or anywhere in Brunswick to the departure site is included in every trip rate. No logistics to figure out.</p>
           </div>
         </div>
       </div>
@@ -97,100 +96,40 @@
       </div>
       <div class="container trips-container">
         <h2 class="section-title light">Trips &amp; Rates</h2>
-        <p class="section-intro light">All trips are private. Season runs May through mid-October.</p>
+        <p class="section-intro light">{{ trips.intro }}</p>
         <div class="trips-grid">
-          
-          <div class="trip-card">
+          {% for trip in trips.trips %}
+          <div class="trip-card{% if trip.featured %} trip-card-featured{% endif %}">
             <div class="trip-header">
-              <span class="trip-badge">Private Trip</span>
-              <h3 class="trip-name">AM Half Day</h3>
+              <span class="trip-badge{% if trip.featured %} badge-featured{% endif %}">{{ trip.badge }}</span>
+              <h3 class="trip-name">{{ trip.name }}</h3>
             </div>
             <div class="trip-details">
-              <p class="trip-price">$350</p>
+              <p class="trip-price">{{ trip.price }}</p>
               <ul class="trip-specs">
-                
-                <li>4 hours · Starts 5:30 AM</li>
-                
-                <li>Saturdays &amp; Sundays</li>
-                
-                <li>May 13 - Oct 15</li>
-                
-                <li>Free cancellation with 1 day notice</li>
-                
+                {% for spec in trip.specs %}
+                <li>{{ spec }}</li>
+                {% endfor %}
               </ul>
             </div>
-            <a href="mailto:CaptainDrew@badcastcharters.com?subject=Trip%20Inquiry%20-%20Bad%20Cast%20Charters" class="btn btn-primary btn-full">Book This Trip</a>
+            <a href="mailto:{{ site.email }}?subject=Trip%20Inquiry%20-%20Bad%20Cast%20Charters" class="btn btn-primary btn-full">Book This Trip</a>
           </div>
-          
-          <div class="trip-card trip-card-featured">
-            <div class="trip-header">
-              <span class="trip-badge badge-featured">Most Popular</span>
-              <h3 class="trip-name">Half Day - 1 Tide</h3>
-            </div>
-            <div class="trip-details">
-              <p class="trip-price">$350</p>
-              <ul class="trip-specs">
-                
-                <li>4 hours · Starts 5:00 PM</li>
-                
-                <li>Any day of the week</li>
-                
-                <li>May 10 - Oct 15</li>
-                
-                <li>Free cancellation with 1 day notice</li>
-                
-              </ul>
-            </div>
-            <a href="mailto:CaptainDrew@badcastcharters.com?subject=Trip%20Inquiry%20-%20Bad%20Cast%20Charters" class="btn btn-primary btn-full">Book This Trip</a>
-          </div>
-          
-          <div class="trip-card">
-            <div class="trip-header">
-              <span class="trip-badge">Private Trip</span>
-              <h3 class="trip-name">Full Day - 2 Tides</h3>
-            </div>
-            <div class="trip-details">
-              <p class="trip-price">$600</p>
-              <ul class="trip-specs">
-                
-                <li>8 hours · Starts 5:30 AM</li>
-                
-                <li>Saturdays &amp; Sundays</li>
-                
-                <li>May 10 - Oct 15</li>
-                
-                <li>Free cancellation with 1 day notice</li>
-                
-              </ul>
-            </div>
-            <a href="mailto:CaptainDrew@badcastcharters.com?subject=Trip%20Inquiry%20-%20Bad%20Cast%20Charters" class="btn btn-primary btn-full">Book This Trip</a>
-          </div>
-          
+          {% endfor %}
         </div>
 
         <div class="included">
           <h3 class="included-title">Every trip includes</h3>
           <ul class="included-list">
-            
-            <li>Rods, reels &amp; tackle</li>
-            
-            <li>Lures &amp; flies</li>
-            
-            <li>Fly fishing equipment</li>
-            
-            <li>Fishing license</li>
-            
-            <li>Water &amp; snacks</li>
-            
-            <li>Ice box onboard</li>
-            
+            {% for item in trips.included %}
+            <li>{{ item }}</li>
+            {% endfor %}
           </ul>
-          <p class="included-note">Catch and release is strongly encouraged. Some species may require special tags. Drew will let you know what to expect before you go.</p>
+          <p class="included-note">{{ trips.included_note }}</p>
         </div>
 
         <div class="guest-brings">
           <h3 class="included-title">What to bring</h3>
-          <p class="guest-brings-text">Sunblock (non-spray), sunglasses, and a water bottle. Feel free to bring food and drinks. Alcohol is fine in moderation - skip the hard liquor and glass bottles. Dress in layers; mornings on the water are cool even in summer. *Please no black sole footwear*</p>
+          <p class="guest-brings-text">{{ trips.what_to_bring }}</p>
         </div>
 
       </div>
@@ -221,21 +160,15 @@
     <section class="about" id="about">
       <div class="container about-container">
         <div class="about-photos">
-          <img src="/images/captain-drew.png" alt="Captain Drew Renda holding a striped bass on F/V Bad Cast" class="about-photo-main" />
-          <img src="/images/logo.jpeg" alt="FV Bad Cast Charters logo" class="about-photo-secondary" />
+          <img src="/{{ about.photo_main }}" alt="{{ about.photo_main_alt }}" class="about-photo-main" />
+          <img src="/{{ about.photo_secondary }}" alt="{{ about.photo_secondary_alt }}" class="about-photo-secondary" />
         </div>
         <div class="about-text">
-          <p class="about-eyebrow">Your Captain</p>
-          <h2 class="about-name">Captain Drew Renda</h2>
-          
-          <p>Capt Drew has been fishing the New Meadows watershed for over 20 years. We will keep the hunt moving while we drift the edges, ledges and shallows. He loves sharing that knowledge with people who want to learn and enjoy the ocean experience </p>
-          
-          <p>Whether you&#39;ve never held a fly rod or you&#39;ve been casting for decades, Drew meets you where you are. He&#39;s patient, communicative, and focused on making sure you have a great day on the water.</p>
-          
-          <p>F/V Bad Cast is a 21-foot Grady-White rigged for both fly fishing and spin casting. All equipment can be provided. The boat is licensed for shark and tuna in the rare occurrence of targeting these species.</p>
-          
-          <p>We don’t wait with bait. We keep casting! </p>
-          
+          <p class="about-eyebrow">{{ about.eyebrow }}</p>
+          <h2 class="about-name">{{ about.name }}</h2>
+          {% for para in about.paragraphs %}
+          <p>{{ para }}</p>
+          {% endfor %}
           <a href="#contact" class="btn btn-primary">Book a Trip with Drew</a>
         </div>
       </div>
@@ -249,22 +182,12 @@
       <div class="container">
         <h2 class="section-title">What People Are Saying</h2>
         <div class="testimonials-grid">
-          
+          {% for t in testimonials.testimonials %}
           <blockquote class="testimonial">
-            <p>"Knowledgeable, patient, and a great guide for both new and experienced anglers. Drew put us on fish right away and kept us there."</p>
-            <cite>Fishing Booker guest</cite>
+            <p>"{{ t.quote }}"</p>
+            <cite>{{ t.source }}</cite>
           </blockquote>
-          
-          <blockquote class="testimonial">
-            <p>"Took us to great spots and gave us an awesome time on the water. Couldn&#39;t have asked for a better morning out there."</p>
-            <cite>Fishing Booker guest</cite>
-          </blockquote>
-          
-          <blockquote class="testimonial">
-            <p>"Made it memorable. Drew helped a first-timer in our group land her first striper. She&#39;s already asking when we&#39;re going back."</p>
-            <cite>Fishing Booker guest</cite>
-          </blockquote>
-          
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -277,43 +200,11 @@
         <h2 class="section-title">On the Water</h2>
       </div>
       <div class="gallery-grid">
-        
-        <div class="gallery-item">
-          <img src="/images/gallery-1.jpeg" alt="Donna holding a striped bass at golden hour on the New Meadows" loading="lazy" />
+        {% for photo in gallery.photos %}
+        <div class="gallery-item{% if photo.wide %} gallery-item-wide{% endif %}">
+          <img src="/{{ photo.src }}" alt="{{ photo.alt }}" loading="lazy" />
         </div>
-        
-        <div class="gallery-item">
-          <img src="/images/gallery-8.jpeg" alt="Captain Drew with a striped bass on the fly rod, Maine rocky coast" loading="lazy" />
-        </div>
-        
-        <div class="gallery-item">
-          <img src="/images/gallery-2.jpeg" alt="Fly fishing for striped bass along the Maine rocky shoreline" loading="lazy" />
-        </div>
-        
-        <div class="gallery-item">
-          <img src="/images/gallery-7.jpeg" alt="Happy angler with a large striped bass on F/V Bad Cast" loading="lazy" />
-        </div>
-        
-        <div class="gallery-item">
-          <img src="/images/gallery-9.jpeg" alt="Angler with a trophy bluefish on a perfect Maine day" loading="lazy" />
-        </div>
-        
-        <div class="gallery-item">
-          <img src="/images/gallery-3.jpeg" alt="Angler with a large cod on F/V Bad Cast" loading="lazy" />
-        </div>
-        
-        <div class="gallery-item">
-          <img src="/images/gallery-4.jpeg" alt="Happy angler with a bluefish on a sunny day" loading="lazy" />
-        </div>
-        
-        <div class="gallery-item">
-          <img src="/images/gallery-5.jpeg" alt="Striped bass caught near the Brunswick Maine harbor" loading="lazy" />
-        </div>
-        
-        <div class="gallery-item">
-          <img src="/images/gallery-10.jpeg" alt="Captain Drew in blue shirt holding a fish on F/V Bad Cast" loading="lazy" />
-        </div>
-        
+        {% endfor %}
       </div>
     </section>
 
@@ -328,8 +219,8 @@
         <p class="section-intro">See what's running, where Drew's been, and what the water looks like this week.</p>
         <div class="instagram-placeholder">
           <!-- Replace with Instagram embed code when ready -->
-          <a href="https://www.instagram.com/badcast_charters" target="_blank" rel="noopener" class="instagram-link">
-            <span class="instagram-handle">@badcast_charters</span>
+          <a href="{{ site.instagram }}" target="_blank" rel="noopener" class="instagram-link">
+            <span class="instagram-handle">{{ site.instagram_handle }}</span>
             <span class="instagram-cta">View on Instagram &rarr;</span>
           </a>
         </div>
@@ -359,19 +250,19 @@
     <section class="contact" id="contact">
       <div class="container contact-container">
         <div class="contact-text">
-          <h2 class="section-title">Ready to Go?</h2>
-          <p>Ready to get out on the water? Send Drew an email with your preferred date, trip type, and group size. He&#39;ll get back to you quickly to confirm availability and lock in your trip.</p>
+          <h2 class="section-title">{{ contact.heading }}</h2>
+          <p>{{ contact.intro }}</p>
           <div class="contact-actions">
-            <a href="mailto:CaptainDrew@badcastcharters.com?subject=Trip%20Inquiry%20-%20Bad%20Cast%20Charters&body=Hi%20Captain%20Drew%2C%0A%0AI%27d%20like%20to%20book%20a%20trip.%0A%0APreferred%20date%3A%0ATrip%20type%20(AM%20half%20day%2C%20half%20day%2C%20full%20day)%3A%0AGroup%20size%3A%0AAnything%20else%3A%0A%0AThanks!" class="btn btn-primary">Email Captain Drew</a>
+            <a href="mailto:{{ contact.email }}?subject=Trip%20Inquiry%20-%20Bad%20Cast%20Charters&body=Hi%20Captain%20Drew%2C%0A%0AI%27d%20like%20to%20book%20a%20trip.%0A%0APreferred%20date%3A%0ATrip%20type%20(AM%20half%20day%2C%20half%20day%2C%20full%20day)%3A%0AGroup%20size%3A%0AAnything%20else%3A%0A%0AThanks!" class="btn btn-primary">Email Captain Drew</a>
           </div>
           <div class="contact-details">
-            <p><strong>Email:</strong> <a href="mailto:CaptainDrew@badcastcharters.com">CaptainDrew@badcastcharters.com</a></p>
-            <p><strong>Departure:</strong> Watsons General Store, Harpswell ME </p>
-            <p><strong>Season:</strong> May - mid-October</p>
+            <p><strong>Email:</strong> <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+            <p><strong>Departure:</strong> {{ contact.departure }}</p>
+            <p><strong>Season:</strong> {{ contact.season }}</p>
           </div>
         </div>
         <div class="contact-boat">
-          <img src="/images/gallery-6.jpeg" alt="On the water with Bad Cast Charters" class="contact-boat-img" />
+          <img src="/{{ contact.boat_image }}" alt="{{ contact.boat_image_alt }}" class="contact-boat-img" />
         </div>
       </div>
     </section>
@@ -384,18 +275,18 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="/images/logo.jpeg" alt="Bad Cast Charters" class="footer-logo-img" />
-        <span class="footer-brand-name">Bad Cast Charters</span>
+        <img src="/{{ site.logo }}" alt="{{ site.name }}" class="footer-logo-img" />
+        <span class="footer-brand-name">{{ site.name }}</span>
       </div>
       <div class="footer-links">
         <a href="#trips">Trips</a>
         <a href="#about">Captain Drew</a>
         <a href="#gallery">Gallery</a>
-        <a href="https://www.instagram.com/badcast_charters" target="_blank" rel="noopener">Instagram</a>
-        <a href="mailto:CaptainDrew@badcastcharters.com">Contact</a>
+        <a href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:{{ site.email }}">Contact</a>
       </div>
-      <p class="footer-copy">&copy; 2026 Bad Cast Charters &middot; Brunswick, Maine</p>
-      <p class="footer-disclaimer">Some species may be subject to size and bag limits or require special tags. Guests are responsible for knowing applicable regulations. Captain Drew will advise before your trip.</p>
+      <p class="footer-copy">&copy; {{ site.year }} {{ site.name }} &middot; Brunswick, Maine</p>
+      <p class="footer-disclaimer">{{ site.disclaimer }}</p>
     </div>
   </footer>
 
