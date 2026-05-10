@@ -605,9 +605,8 @@ ul {
   aspect-ratio: 1;
   object-fit: cover;
   object-position: center top;
-  border: none;
-  box-shadow: none;
-  background: transparent;
+  border: 4px solid var(--white);
+  box-shadow: 0 6px 20px rgba(17,30,42,0.2);
 }
 
 .about-eyebrow {
